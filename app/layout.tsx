@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Schibsted_Grotesk, Martian_Mono } from "next/font/google";
+// import "./globals.css";
+// import LightRays from "@/components/LightRays";
+// import Navbar from "@/components/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const schibstedGrotesk = Schibsted_Grotesk({
+  variable: "--font-schibsted-grotesk",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const martianMono = Martian_Mono({
+  variable: "--font-martian-mono",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Dev Flow",
-  description: "A better version of Stack Overflow",
+  title: "DevEvent",
+  description: "The Hub for Every Dev Event You Mustn't Miss",
 };
 
 export default function RootLayout({
@@ -24,7 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+      <body
+        className={`${schibstedGrotesk.variable} ${martianMono.variable} min-h-screen antialiased`}
+      >
+        <main>{children}</main>
+      </body>
     </html>
   );
 }
